@@ -18,7 +18,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".MajorActivity" />
-        <activity android:name=".FirstActivity"></activity>
     </application>
 
 </manifest>

@@ -6,22 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.administrator.demo.MainActivity">
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:suppprtRtl="true"
-        android:theme="@style/AppTheme"
-        <activity
-            android:name=".LoginActivity"
-            android:label="This is LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".MajorActivity"></activity>
-        </application>
+
 
 
 </android.support.constraint.ConstraintLayout>
