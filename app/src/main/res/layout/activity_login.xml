@@ -82,7 +82,7 @@
         android:visibility="gone"
         />
     <Button
-        android:id="@+id/Login_TextView_Send"
+        android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="登陆"
@@ -101,7 +101,7 @@
         android:orientation="horizontal"
         android:id="@+id/linearLayout2"
         android:layout_marginBottom="48dp"
-        android:layout_above="@+id/Login_TextView_Send"
+        android:layout_above="@+id/btn_login"
         android:layout_toLeftOf="@+id/linearLayout"
         android:layout_toStartOf="@+id/linearLayout"
         android:layout_marginRight="46dp"

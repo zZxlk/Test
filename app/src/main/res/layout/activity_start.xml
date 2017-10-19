@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.demo.MajorActivity">
+    tools:context="com.example.administrator.demo.StartActivity">
 
-    <Button
-        android:id="@+id/button_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="####"
-        />
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/wechat"
+        tools:layout_editor_absoluteY="99dp"
+        tools:layout_editor_absoluteX="117dp" />
 </android.support.constraint.ConstraintLayout>
