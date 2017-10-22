@@ -31,7 +31,7 @@
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@mipmap/qqzone"
+            android:src="@mipmap/wechat"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="100dp"
             />
@@ -81,7 +81,7 @@
         android:layout_below="@id/Login_LinearLayout_Phone"
         android:visibility="gone"
         />
-    <TextView
+    <Button
         android:id="@+id/Login_TextView_Send"
         android:layout_width="match_parent"
         android:layout_height="50dp"
