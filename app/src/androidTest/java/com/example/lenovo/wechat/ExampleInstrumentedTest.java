@@ -1,4 +1,4 @@
-package com.example.administrator.demo;
+package com.example.lenovo.wechat;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.administrator.demo", appContext.getPackageName());
+        assertEquals("com.example.lenovo.wechat", appContext.getPackageName());
     }
 }

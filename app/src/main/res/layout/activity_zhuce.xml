@@ -9,15 +9,27 @@
         android:layout_height="match_parent">
 
 
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="250dp"
+            android:layout_height="48dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_register_et"
+            android:hint="输入验证码"
+            android:inputType="number"
+            android:textCursorDrawable="@null" />
+
         <TextView
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:text="其它注册方式"
-            android:gravity="center"
-            android:textSize="18dp"
             android:layout_above="@+id/imageButton3"
-            android:layout_marginBottom="33dp" />
+            android:layout_marginBottom="33dp"
+            android:gravity="center"
+            android:text="其它注册方式"
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/textView6"
@@ -46,9 +58,9 @@
             android:id="@+id/button"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:layout_below="@+id/editText"
+            android:layout_above="@+id/textView9"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="52dp"
+            android:layout_marginBottom="35dp"
             android:background="#e8e8e8"
             android:gravity="center"
             android:text="注册"
@@ -86,6 +98,16 @@
             android:layout_toLeftOf="@+id/imageButton5"
             android:layout_toStartOf="@+id/imageButton5"
             app:srcCompat="@mipmap/weibo" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:text="获取验证码"
+            android:layout_alignBaseline="@+id/editText2"
+            android:layout_alignBottom="@+id/editText2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
 
     </RelativeLayout>

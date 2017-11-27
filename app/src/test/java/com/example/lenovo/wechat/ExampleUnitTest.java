@@ -1,4 +1,4 @@
-package com.example.administrator.demo;
+package com.example.lenovo.wechat;
 
 import org.junit.Test;
 
