@@ -1,5 +1,6 @@
 package com.example.lenovo.wechat;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         // 初始化控件
         initView();
         // 初始化底部按钮事件
@@ -62,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         setSupportActionBar(toolbar);
-
 
 
 
@@ -76,11 +77,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
     }
     private void initEvent() {
+
         // 设置按钮监听
         ll_home.setOnClickListener(this);
         ll_address.setOnClickListener(this);
         ll_friend.setOnClickListener(this);
         ll_setting.setOnClickListener(this);
+
 
         //设置ViewPager滑动监听
         viewPager.setOnPageChangeListener(this);
@@ -88,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void initView() {
 
         // 底部菜单4个Linearlayout
+
         this.ll_home = (LinearLayout) findViewById(R.id.ll_home);
         this.ll_address = (LinearLayout) findViewById(R.id.ll_address);
         this.ll_friend = (LinearLayout) findViewById(R.id.ll_friend);
@@ -221,10 +225,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         iv_friend.setImageResource(R.drawable.tab_friend_normal);
         iv_setting.setImageResource(R.drawable.tab_settings_normal);
         // TextView置为白色
-        tv_home.setTextColor(0xffffffff);
-        tv_address.setTextColor(0xffffffff);
-        tv_friend.setTextColor(0xffffffff);
-        tv_setting.setTextColor(0xffffffff);
+        tv_home.setTextColor(0xff080808);
+        tv_address.setTextColor(0xff080808);
+        tv_friend.setTextColor(0xff080808);
+        tv_setting.setTextColor(0xff080808);
     }
 
     @Override
