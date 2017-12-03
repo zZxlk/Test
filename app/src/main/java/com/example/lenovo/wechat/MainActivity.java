@@ -5,6 +5,9 @@ import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.PopupMenu;
 import android.view.View;
@@ -16,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -43,11 +47,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private TextView tv_friend;
     private TextView tv_setting;
 
+    // 4个Fragment
+    private Fragment homeFragment;
+    private Fragment addressFragment;
+    private Fragment friendFragment;
+    private Fragment settingFragment;
+
     // 中间内容区域
-    private ViewPager viewPager;
+    //private ViewPager viewPager;
 
     // ViewPager适配器ContentAdapter
-    private ContentAdapter adapter;
+    //private ContentAdapter adapter;
 
     private List<View> views;
     @Override
@@ -59,12 +69,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         initView();
         // 初始化底部按钮事件
         initEvent();
+        // 初始化并设置当前Fragment
+        initFragment(0);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("微信");
-
         setSupportActionBar(toolbar);
-
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -75,6 +84,68 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+    private void initFragment(int index) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        hideFragment(transaction);
+        switch (index) {
+            case 0:
+                if (homeFragment == null) {
+                    homeFragment = new HomeFragment();
+                    transaction.add(R.id.fl_content, homeFragment);
+                } else {
+                    transaction.show(homeFragment);
+                }
+                break;
+            case 1:
+                             if (addressFragment == null) {
+                                 addressFragment = new AddressFragment();
+                                 transaction.add(R.id.fl_content, addressFragment);
+                             } else {
+                                 transaction.show(addressFragment);
+                             }
+
+                             break;
+                     case 2:
+                             if (friendFragment == null) {
+                                     friendFragment = new FriendFragment();
+                                     transaction.add(R.id.fl_content, friendFragment);
+                                 } else {
+                                     transaction.show(friendFragment);
+                                 }
+
+                             break;
+                     case 3:
+                             if (settingFragment == null) {
+                                     settingFragment = new SettingFragment();
+                                     transaction.add(R.id.fl_content, settingFragment);
+                                 } else {
+                                     transaction.show(settingFragment);
+                                 }
+
+                             break;
+
+                     default:
+                             break;
+        }
+        transaction.commit();
+    }
+    //隐藏Fragment
+    private void hideFragment(FragmentTransaction transaction) {
+                 if (homeFragment != null) {
+                         transaction.hide(homeFragment);
+                     }
+                 if (addressFragment != null) {
+                         transaction.hide(addressFragment);
+                     }
+                 if (friendFragment != null) {
+                         transaction.hide(friendFragment);
+                     }
+                 if (settingFragment != null) {
+                         transaction.hide(settingFragment);
+                     }
+
+             }
     private void initEvent() {
 
         // 设置按钮监听
@@ -85,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         //设置ViewPager滑动监听
-        viewPager.setOnPageChangeListener(this);
+        //viewPager.setOnPageChangeListener(this);
     }
     private void initView() {
 
@@ -109,10 +180,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.tv_setting = (TextView) findViewById(R.id.tv_setting);
 
         // 中间内容区域ViewPager
-        this.viewPager = (ViewPager) findViewById(R.id.vp_content);
+        //this.viewPager = (ViewPager) findViewById(R.id.vp_content);
 
         // 适配器
-        View page_01 = View.inflate(MainActivity.this, R.layout.page_01, null);
+        /*View page_01 = View.inflate(MainActivity.this, R.layout.page_01, null);
         View page_02 = View.inflate(MainActivity.this, R.layout.page_02, null);
         View page_03 = View.inflate(MainActivity.this, R.layout.page_03, null);
         View page_04 = View.inflate(MainActivity.this, R.layout.page_04, null);
@@ -124,7 +195,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         views.add(page_04);
 
         this.adapter = new ContentAdapter(views);
-        viewPager.setAdapter(adapter);
+        viewPager.setAdapter(adapter);*/
 
     }
 
@@ -194,22 +265,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.ll_home:
                 iv_home.setImageResource(R.drawable.tab_wechat_selected);
                 tv_home.setTextColor(0xff1B940A);
-                viewPager.setCurrentItem(0);
+                //viewPager.setCurrentItem(0);
+                initFragment(0);
                 break;
             case R.id.ll_address:
                 iv_address.setImageResource(R.drawable.tab_contacts_selected);
                 tv_address.setTextColor(0xff1B940A);
-                viewPager.setCurrentItem(1);
+                //viewPager.setCurrentItem(1);
+                initFragment(1);
                 break;
             case R.id.ll_friend:
                 iv_friend.setImageResource(R.drawable.tab_friend_selected);
                 tv_friend.setTextColor(0xff1B940A);
-                viewPager.setCurrentItem(2);
+                //viewPager.setCurrentItem(2);
+                initFragment(2);
                 break;
             case R.id.ll_setting:
                 iv_setting.setImageResource(R.drawable.tab_settings_selected);
                 tv_setting.setTextColor(0xff1B940A);
-                viewPager.setCurrentItem(3);
+                //viewPager.setCurrentItem(3);
+                initFragment(3);
                 break;
 
             default:

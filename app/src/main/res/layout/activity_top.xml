@@ -10,6 +10,6 @@
              android:layout_centerInParent="true"
             android:text="微信"
              android:textSize="20dp"
-             android:textColor="#ffffff"/>
+             android:textColor="#080808"/>
 
      </RelativeLayout>
