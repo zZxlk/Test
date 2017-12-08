@@ -3,11 +3,12 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eee">
-    <ExpandableListView
-        android:id="@+id/contact_list"
+    <TextView
+        android:text="TextView"
+        android:textSize="20sp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:divider ="#FFFFFF"/>
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:id="@+id/group_tv" />
 </LinearLayout>
